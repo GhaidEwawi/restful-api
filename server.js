@@ -17,3 +17,4 @@ app.use(express.json());
 // Routes
 
 // Start Server
+app.listen(3000, () => console.log('Server has started on port 3000...'))
