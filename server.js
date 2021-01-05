@@ -8,6 +8,9 @@ mongoose.connect('mongodb://127.0.0.1:27017/user-manager', {useNewUrlParser: tru
     .catch(err => console.error(err))
 
 // Middleware
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 
 // Controllers
 
