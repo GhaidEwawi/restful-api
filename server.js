@@ -1,5 +1,6 @@
 const express = require ('express');
 const mongoose = require ('mongoose');
+const UserControl = require('./controllers/UserControl');
 const app = express();
 
 // Database
@@ -16,6 +17,7 @@ app.use(express.json());
 const USerController = require('./controllers/UserControl')
 
 // Routes
+app.post('/api/user/create', UserControl.create);
 
 // Start Server
 app.listen(3000, () => console.log('Server has started on port 3000...'))
