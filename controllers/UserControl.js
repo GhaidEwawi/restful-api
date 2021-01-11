@@ -32,5 +32,13 @@ module.exports = {
                 res.json({ sucess: false, result: err });
             })
     },
+    retrieve: (req, res) => {
+        UserModel.find()
+            .then(result => {
+                if(!result) res.json({ sucess: false, result: "No results were found " })
+                res.json({ sucess: true, result: result })
+            })
+            .catch(err => res.json({ sucess: false, result: err }));
+    }
      
 }
