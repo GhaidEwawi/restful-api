@@ -18,5 +18,19 @@ module.exports = {
             .catch(err => {
                 res.json({ sucess: false, result: err })
             })
-    }
+    },
+
+    update: (req, res) => {
+        
+        UserModel.updateOne({_id: req.body._id}, req.body)
+            .then(user => {
+                if(!user) res.json({ sucess: false, result: "User does not exist" })
+    
+                res.json({sucess: true, result: user})
+            })
+            .catch(err => {
+                res.json({ sucess: false, result: err });
+            })
+    },
+     
 }

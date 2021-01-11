@@ -18,6 +18,7 @@ const USerController = require('./controllers/UserControl')
 
 // Routes
 app.post('/api/user/create', UserControl.create);
+app.post('/api/user/update', UserControl.update);
 
 // Start Server
 app.listen(3000, () => console.log('Server has started on port 3000...'))
