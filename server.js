@@ -13,6 +13,7 @@ app.use(express.json());
 
 
 // Controllers
+const USerController = require('./controllers/UserControl')
 
 // Routes
 
