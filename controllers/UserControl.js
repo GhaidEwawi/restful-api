@@ -39,6 +39,15 @@ module.exports = {
                 res.json({ sucess: true, result: result })
             })
             .catch(err => res.json({ sucess: false, result: err }));
+    },
+    delete: (req, res) => {
+        UserModel.remove({ _id: req.body._id })
+            .then(result => {
+                if(!result) res.json({ sucess: false, result: "No user was found with this id" })
+
+                res.json({ sucess: true, result: result })
+            })
+            .catch(err => res.json({ sucess: false, result: err }))
     }
      
 }
